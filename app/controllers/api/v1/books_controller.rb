@@ -2,7 +2,7 @@
 
 class Api::V1::BooksController < ApplicationController
   def index
-    book = Books.all
+    book = Book.all
     render json: { status: 'SUCCESS', book: book }
   end
 
