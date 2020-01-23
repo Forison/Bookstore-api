@@ -1,4 +1,6 @@
-class Api::V1::BooksController < ApplicationController    
+# frozen_string_literal: true
+
+class Api::V1::BooksController < ApplicationController
   def index
     book = Books.all
     render json: { status: 'SUCCESS', book: book }
@@ -23,7 +25,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   private
-  
+
   def book_params
     params.require(:book).permit(:title, :author, :category)
   end
